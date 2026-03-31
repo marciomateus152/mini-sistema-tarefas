@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.recipiente-principal {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid #334155;
+}
+
+h1 {
+    text-align: center;
+    color: #0ea5e9;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.formulario-grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.campo-largo {
+    grid-column: span 2;
+}
+
+input, textarea, select, button {
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 15px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+button {
+    background-color: #0ea5e9;
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    grid-column: span 2;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.4);
+}
+
+.container-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cartao-tarefa {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #0ea5e9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.etiquetas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.etiqueta {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.etiqueta-categoria { background-color: #475569; color: #f8fafc; }
+.prioridade-Alta { background-color: #ef4444; color: white; }
+.prioridade-Média { background-color: #f59e0b; color: white; }
+.prioridade-Baixa { background-color: #10b981; color: white; }
+
+.titulo-tarefa {
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    font-size: 20px;
+}
+
+.descricao-tarefa {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.data-tarefa {
+    font-size: 12px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.texto-riscado {
+    text-decoration: line-through;
+    color: #475569;
+}
+
+.cartao-tarefa-concluida {
+    border-left-color: #10b981;
+    opacity: 0.6;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 10px;
+}
+
+.botao {
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.botao-sucesso { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+.botao-sucesso:hover { background-color: #10b981; color: white; }
+.botao-perigo { background-color: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.botao-perigo:hover { background-color: #ef4444; color: white; }
+
+.rodape-portfolio {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.rodape-portfolio a {
+    color: #0ea5e9;
+    text-decoration: none;
+    font-weight: 600;
+}
+.rodape-portfolio a:hover {
+    text-decoration: underline;
+}

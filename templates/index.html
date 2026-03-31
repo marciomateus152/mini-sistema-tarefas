@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Sistema de Gestão de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="recipiente-principal">
+        <h1>Gestão de Tarefas</h1>
+        
+        <form action="/adicionar" method="POST" class="formulario-grade">
+            <input type="text" name="titulo" class="campo-largo" placeholder="Qual a sua nova tarefa?" required autocomplete="off">
+            
+            <select name="categoria" required>
+                <option value="" disabled selected>Categoria...</option>
+                <option value="Desenvolvimento">Desenvolvimento</option>
+                <option value="Estudos">Estudos</option>
+                <option value="Pessoal">Pessoal</option>
+                <option value="Projetos">Projetos</option>
+            </select>
+            
+            <select name="prioridade" required>
+                <option value="" disabled selected>Prioridade...</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+            
+            <input type="date" name="data_limite" class="campo-largo" required>
+            
+            <textarea name="descricao" class="campo-largo" placeholder="Detalhes, links ou anotações importantes..." rows="3"></textarea>
+            
+            <button type="submit">Adicionar ao Sistema</button>
+        </form>
+
+        <ul class="container-tarefas">
+            {% for item in lista_tarefas %}
+                <li class="cartao-tarefa {% if item['concluida'] %}cartao-tarefa-concluida{% endif %}">
+                    <div class="informacoes-tarefa">
+                        <div class="etiquetas">
+                            <span class="etiqueta etiqueta-categoria">{{ item['categoria'] }}</span>
+                            <span class="etiqueta prioridade-{{ item['prioridade'] }}">Prioridade {{ item['prioridade'] }}</span>
+                        </div>
+                        <p class="titulo-tarefa {% if item['concluida'] %}texto-riscado{% endif %}">{{ item['titulo'] }}</p>
+                        <p class="descricao-tarefa {% if item['concluida'] %}texto-riscado{% endif %}">{{ item['descricao'] }}</p>
+                        <span class="data-tarefa">Prazo: {{ item['data_limite'] }}</span>
+                    </div>
+                    <div class="botoes-acao">
+                        {% if not item['concluida'] %}
+                            <a href="/concluir/{{ item['id'] }}" class="botao botao-sucesso">Finalizar</a>
+                        {% endif %}
+                        <a href="/excluir/{{ item['id'] }}" class="botao botao-perigo">Apagar</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer class="rodape-portfolio">
+        <p>Desenvolvido por <strong>Márcio Mateus</strong></p>
+        <p>
+            <a href="https://github.com/marciomateus152" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/marcio-mateus-509952236" target="_blank">LinkedIn</a> | 
+            <a href="mailto:marciomateus152@gmail.com">Contato</a>
+        </p>
+    </footer>
+</body>
+</html>
