@@ -16,7 +16,7 @@
 ## 💡 Sobre o Projeto
 Este Mini Sistema de Gestão de Tarefas foi desenvolvido como um projeto de aprendizado prático e intensivo. O objetivo principal é consolidar conhecimentos em **Backend com Python**, **manipulação de banco de dados relacional (CRUD)** e construção de uma **interface Web moderna e responsiva**.
 
-Fugindo do básico, a aplicação conta com um design exclusivo em *Dark Mode*, categorização inteligente e sistema de prioridades, refletindo um padrão de código limpo, variáveis padronizadas em português e foco absoluto em usabilidade.
+Fugindo do básico, a aplicação conta com um design exclusivo em *Dark Mode*, categorização inteligente e sistema de prioridades, refletindo um padrão de código limpo, variáveis padronizadas e foco absoluto em usabilidade.
 
 ---
 
